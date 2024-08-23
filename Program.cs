@@ -1,15 +1,46 @@
+using Microsoft.Extensions.DependencyInjection;
+using Suzane.WebApp;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Registrer IMyFileService
+builder.Services.AddScoped<IMyFileService, MyFileService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// Les innholdet fra filen og skriv det ut til konsollen
+using (var scope = app.Services.CreateScope())
+{
+    var fileService = scope.ServiceProvider.GetRequiredService<IMyFileService>();
+
+    // Definer filstien korrekt
+    string filePath = "C:\\Code\\Suzane.WebApp\\omMeg.txt";
+
+    // Sørg for at filen eksisterer før du prøver å lese den
+    if (File.Exists(filePath))
+    {
+        IEnumerable<string> linje = fileService.ReadMyFile(filePath);
+
+        int linjeNummer = 1;
+        foreach (string line in linje)
+        {
+            Console.WriteLine($"{linjeNummer} : {line}");
+            linjeNummer++;
+        }
+    }
+    else
+    {
+        Console.WriteLine($"Filen finnes ikke på angitt sti: {filePath}");
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -20,17 +51,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-//Kode fra Azure 1
-//app.MapGet("/", () => "Hello, Academy 2024 xD");
-
-//Kode fra Azure 2
-app.MapGet("/hello/{name}", (string name) => $"Hello, {name ?? "Academy"}!");
-
-
 app.MapControllers();
-
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

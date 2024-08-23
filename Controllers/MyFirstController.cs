@@ -1,16 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Suzane.WebApp.Controllers
+namespace Suzane.WebApp.Controllers;
+public class MyFirstController : Controller
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class MyFirstController : ControllerBase
+    private readonly IMyFileService _fileService;
+
+    public MyFirstController(IMyFileService fileService)
     {
-        [HttpGet]
-        public string Index([FromQuery] string name)
-        {
-         
-            return $"Hello {name} ";
-        }
+        _fileService = fileService;
     }
+    [HttpGet("readmyfile")]
+    public IActionResult ReadMyFile([FromQuery] string filePath)
+    {
+        if (string.IsNullOrEmpty(filePath))
+        {
+            return BadRequest("File path cannot be null or empty");
+        }
+
+        var content = _fileService.ReadMyFile(filePath);
+        return Ok(content);
+    }
+
+
 }
