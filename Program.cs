@@ -20,8 +20,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//Kode fra Azure 1
+//app.MapGet("/", () => "Hello, Academy 2024 xD");
+
+//Kode fra Azure 2
+app.MapGet("/hello/{name}", (string name) => $"Hello, {name ?? "Academy"}!");
+
+
+app.MapControllers();
+
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

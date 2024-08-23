@@ -1,4 +1,4 @@
-﻿namespace Suzane.WebApp
+﻿/*namespace Suzane.WebApp
 {
     public interface IMyFileService
     {
@@ -8,3 +8,4 @@
 
     }
 }
+*/
