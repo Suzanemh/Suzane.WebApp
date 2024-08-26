@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suzane.WebApp", "Suzane.WebApp.csproj", "{FDF4147F-C4AA-47E3-8F38-B34B44CB5811}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suzane.WebApp.Tests", "Suzane.WebApp.Tests\Suzane.WebApp.Tests.csproj", "{60048553-3BA6-4F33-928C-F960B378254A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Suzane.WebApp", "Suzane.WebApp.csproj", "{FDF4147F-C4AA-47E3-8F38-B34B44CB5811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{FDF4147F-C4AA-47E3-8F38-B34B44CB5811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDF4147F-C4AA-47E3-8F38-B34B44CB5811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDF4147F-C4AA-47E3-8F38-B34B44CB5811}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60048553-3BA6-4F33-928C-F960B378254A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60048553-3BA6-4F33-928C-F960B378254A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60048553-3BA6-4F33-928C-F960B378254A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60048553-3BA6-4F33-928C-F960B378254A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
