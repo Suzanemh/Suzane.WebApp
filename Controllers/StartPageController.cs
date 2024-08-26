@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Suzane.WebApp.Models;
 
 namespace Suzane.WebApp.Controllers
 {
@@ -9,9 +10,17 @@ namespace Suzane.WebApp.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
-			ViewData["Title"] = "Home Page";
-			return View();
-		}
+            // Opprett en instans av StartPageViewModel
+            var model = new StartPageViewModel
+            {
+                // Sett verdien for Body-propertyen
+                Body = "hey suz"
+            };
+
+            
+            // Returner modellen i View-metoden
+            return View(model);
+        }
     }
 }
 
