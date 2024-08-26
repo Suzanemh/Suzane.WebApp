@@ -9,7 +9,9 @@ namespace Suzane.WebApp.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
-            return View();
-        }
+			ViewData["Title"] = "Home Page";
+			return View();
+		}
     }
 }
+
