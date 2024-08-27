@@ -15,6 +15,7 @@ namespace Suzane.WebApp.Controllers
             {
                 // Sett verdien for Body-propertyen
                 Body = "hey suz"
+              
             };
 
             

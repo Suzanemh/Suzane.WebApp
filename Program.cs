@@ -4,6 +4,10 @@ using Suzane.WebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+//Registrering: det betyr at koden under registrerer tjenestene i applikasjonen som en scoped. Scoped betyr at det opprettes en ny instans av f.eks 
+//SearchServices for hver HTTP-forespørsel
+
 // Registrer IMyFileService
 builder.Services.AddScoped<IMyFileService, MyFileService>();
 

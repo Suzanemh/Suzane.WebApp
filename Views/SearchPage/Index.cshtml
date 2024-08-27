@@ -3,24 +3,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search Page</title>
+    <title>Search Results</title>
 </head>
 <body>
-    <h1>Search Page</h1>
+    <h1>Search Results</h1>
+
+
+    <!-- Søkeskjema -->
+    <form method="get" action="/SearchPage">
+        <label for="query">Søk:</label>
+        <input type="text" id="query" name="q" value="@Model.Query" />
+        <button type="submit">Søk</button>
+    </form>
+
     <p>Søkeparameter: @Model.Query</p>
+
     <h2>Results:</h2>
-    <ul>
+
+    <ol>
         @if (Model.Results != null && Model.Results.Length > 0)
         {
             foreach (var result in Model.Results)
             {
                 <li>@result</li>
+
+
             }
         }
         else
         {
             <li>No results found.</li>
         }
-    </ul>
+    </ol>
 </body>
 </html>
