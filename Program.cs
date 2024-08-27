@@ -1,13 +1,19 @@
 using Microsoft.Extensions.DependencyInjection;
 using Suzane.WebApp;
+using Suzane.WebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Registrer IMyFileService
 builder.Services.AddScoped<IMyFileService, MyFileService>();
 
+//Registrer ISearchService
+builder.Services.AddScoped<ISearchService, SearchService>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
 
 var app = builder.Build();
 
