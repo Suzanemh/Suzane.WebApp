@@ -4,7 +4,7 @@
     public class SearchPageViewModel
     {
 
-        // Property for søkeparameteren
+        // Property for søkeparameteren!
         public string Query { get; set; }
 
         // Property for søkeresultatene
