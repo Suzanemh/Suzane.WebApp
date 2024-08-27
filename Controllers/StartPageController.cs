@@ -14,7 +14,7 @@ namespace Suzane.WebApp.Controllers
             var model = new StartPageViewModel
             {
                 // Sett verdien for Body-propertyen
-                Body = "hey suz"
+                Body = "Welcome"
               
             };
 
